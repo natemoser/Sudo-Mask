@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # bin/compile <build-dir> <cache-dir>
 set -e
+set -x
 
 mktmpdir() {
   dir=$(mktemp -t fakesu-$1-XXXX)
@@ -34,7 +35,7 @@ export DEBOOTSTRAP_DIR=$CACHE_DIR/.tools/debootstrap/usr/share/debootstrap
 echo "-----> Fetching and Installing wget"
 cd $WGET_BUILD
 curl -O https://ftp.gnu.org/gnu/wget/wget2-2.0.0.tar.lz >/dev/null 2>&1
-tar jxvf wget2-2.0.0.tar.bz2 >/dev/null 2>&1
+tar jxvf wget2-2.0.0.tar.lz >/dev/null 2>&1
 cd wget2-2.0.0
 ./configure --prefix=$CACHE_DIR/.tools/wget --without-ssl >/dev/null 2>&1
 make >/dev/null 2>&1

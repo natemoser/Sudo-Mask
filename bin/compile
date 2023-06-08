@@ -34,7 +34,7 @@ export DEBOOTSTRAP_DIR=$CACHE_DIR/.tools/debootstrap/usr/share/debootstrap
 echo "-----> Fetching and Installing debootstrap"
 cd $DEBOOTSTRAP_BUILD
 curl -LO https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/debootstrap/1.0.126+nmu1ubuntu0.4/debootstrap_1.0.126+nmu1ubuntu0.4.tar.gz >/dev/null 2>&1
-tar jxvf debootstrap_1.0.126+nmu1ubuntu0.4.tar.gz >/dev/null
+tar zxf debootstrap_1.0.126+nmu1ubuntu0.4.tar.gz >/dev/null
 cd debootstrap-1.0.126+nmu1ubuntu0.4
 DESTDIR=$CACHE_DIR/.tools/debootstrap fakeroot make >/dev/null
 DESTDIR=$CACHE_DIR/.tools/debootstrap fakeroot make install >/dev/null
